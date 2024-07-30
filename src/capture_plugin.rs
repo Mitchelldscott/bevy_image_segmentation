@@ -105,12 +105,6 @@ fn capture_image_on_spacebar(
 
         // Save the texture as an image file
         let file_path = "output_image.png";
-        save_image(file_path, &segmented_image_handle.data, 512, 512);
         println!("Image saved to {}", file_path);
     }
-}
-
-fn save_image(file_path: &str, data: &[u8], width: u32, height: u32) {
-    let img: ImageBuffer<Rgba<u8>, _> = ImageBuffer::from_raw(width, height, data.to_vec()).unwrap();
-    img.save(file_path).unwrap();
 }
