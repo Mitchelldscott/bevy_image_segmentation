@@ -159,20 +159,16 @@ fn spawn_segmentation_children(
             ));
         });
 
-        // Set RenderLayers for the parent and child entities
         commands.entity(entity).insert((RenderLayers::layer(0), SegmentationChildSpawned));
     }
 }
 
 fn toggle_segmentation_display(
     keys: Res<ButtonInput<KeyCode>>,
-    object_table: Res<SegmentationDataTable>,
     mut segmentation_camera: Query<&mut Camera, With<SegmentationCamera>>,
 ) {
     if keys.just_pressed(KeyCode::Space) || keys.just_released(KeyCode::Space) {
-        // Get the camera and image handle (assuming a single camera here)
         let mut camera = segmentation_camera.single_mut();
         camera.is_active = !camera.is_active;
-        println!("Existing Objects {:?}", object_table.table)
     }
 }
