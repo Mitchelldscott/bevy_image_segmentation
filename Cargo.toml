@@ -2,8 +2,22 @@
 name = "bevy_image_segmentation"
 version = "0.1.0"
 edition = "2021"
+categories = ["graphics", "rendering", "data"]
+keywords = ["creative", "coding", "sketching"]
+description = "Bevy plugin for rendering and saving segmentation images"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/MitchellDScott/bevy_image_segmentation"
 
 [dependencies]
-bevy = "0.14.0"
-image = "0.25.2"
+log = { version = "*", features = ["max_level_debug", "release_max_level_warn"] }
+bevy = { version = "0.14", default-features = false, features = [
+  "bevy_render",
+  "bevy_asset",
+] } # { version = "0.14" }
+bevy_image_export = "0.11.0" # { path = "../bevy_image_export" } #  
+# image = "0.25.2"
 rand = "0.8.5"
+
+[dev-dependencies]
+bevy = "0.14"
