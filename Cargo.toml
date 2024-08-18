@@ -15,9 +15,8 @@ bevy = { version = "0.14", default-features = false, features = [
   "bevy_render",
   "bevy_asset",
 ] } # { version = "0.14" }
-bevy_image_export = "0.11.0" # { path = "../bevy_image_export" } #  
-# image = "0.25.2"
 rand = "0.8.5"
+crossbeam-channel = "0.5.13"
 
 [dev-dependencies]
 bevy = "0.14"
